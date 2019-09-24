@@ -6,7 +6,7 @@ def lengthOfLongestSubstring(s):
     if s=="":
         return 0
     s=list(s)
-    print s
+    print(s)
     for l in list(reversed(range(len(s)))):
         i=0
         while(i+l<len(s)):

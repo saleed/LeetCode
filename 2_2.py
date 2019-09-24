@@ -4,6 +4,7 @@
 #         self.val = x
 #         self.next = None
 
+#方法1：链表转数字，然后加在一起，数字再转链表，比较麻烦，但是接口定义比较清晰
 class Solution(object):
     def addTwoNumbers(self, l1, l2):
         """

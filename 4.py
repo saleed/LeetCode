@@ -1,3 +1,5 @@
+#这题的题意没懂是什么意思
+
 def findMedianSortedArrays(nums1, nums2):
     """
     :type nums1: List[int]
@@ -27,9 +29,6 @@ def findMedianSortedArrays(nums1, nums2):
             else:
                 newl.append(nums2[id2])
                 id2 = id2 + 1
-
-
-
 
 a=[1,2]
 b=[3,4]

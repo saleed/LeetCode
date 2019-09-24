@@ -1,3 +1,4 @@
+#暴力的方法：
 
 def longestPalindrome(s):
     """

@@ -4,6 +4,9 @@ class ListNode(object):
         self.val = x
         self.next = None
 
+
+#方法2：
+## 最简单的方法，直接使用带进位的按位求和的方法，由于本身两个链表就相当于数字的反序，所以直接也不需要对齐，按位相加，找个变量存下进位即可
 class Solution(object):
     def addTwoNumbers(self, l1, l2):
         """

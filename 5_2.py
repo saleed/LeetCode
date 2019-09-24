@@ -1,11 +1,11 @@
+#刘汝佳的边境竞赛入门 有同样的题，本题未解决
+
 class Solution(object):
     def longestPalindrome(self, s):
         """
         :type s: str
         :rtype: str
         """
-
-
         dp=[[0 if i<j else 1 for i in range(len(s))] for j in range(len(s))]
         res=""
         for interval in range(len(s)):

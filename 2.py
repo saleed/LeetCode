@@ -5,14 +5,7 @@
 #         self.next = None
 
 
-#method1: convert each given single list to a int and then do addition,then convert to a result linklist
 
-
-# Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
 
 class Solution(object):
     def addTwoNumbers(self, l1, l2):
