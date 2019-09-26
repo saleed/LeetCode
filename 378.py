@@ -61,16 +61,16 @@ import heapq
 class Solution(object):
     def kthSmallest(self, matrix, k):
         heap = [(matrix[0][0],0,0)]
-        print heap
+        # print(heap
         heapq.heapify(heap)
         count=0
         ret=0
         while count<k:
             ret, i, j = heapq.heappop(heap)
-            print ret
-            if j+1 < len(matrix[0]) and matrix[i][j+1] not in heap:
+            # print(ret
+            if j+1 < len(matrix[0]) and (matrix[i][j+1],i,j+1)not in heap:
                 heapq.heappush(heap, (matrix[i][j+1], i, j+1))
-            if i+1<len(matrix) and matrix[i+1][j] not in heap:
+            if i+1<len(matrix) and (matrix[i+1][j],i+1,j) not in heap:
                 heapq.heappush(heap,(matrix[i+1][j],i+1,j))
             count+=1
         return ret
@@ -83,14 +83,14 @@ matrix = [
 ]
 k = 8
 a=Solution()
-print a.kthSmallest(matrix,8)
+print(a.kthSmallest(matrix,8))
 
 matrix=[[1,3,5],[6,7,12],[11,14,14]]
 k=6
-print a.kthSmallest(matrix,k)
+print(a.kthSmallest(matrix,k))
 
-test=[1, 5, 9]
+test=[(0,0),(1,2),(3,4)]
 heapq.heapify(test)
-heapq.heappush(111)
-print 1 in test
-print 111 in te
+heapq.heappush(test,(5,6))
+print((1,3) in test)
+

@@ -17,8 +17,7 @@ class Solution(object):
                 if len(splitstr)==2 and splitstr[1]=='ext':
                     curdep=0
                     for i in depth:
-
-                    maxlen=max(maxlen,len(curstr))
+                        maxlen=max(maxlen,len(curstr))
                 curstr=""
                 ptr+=1
                 dep=0
@@ -32,7 +31,7 @@ def lengthLongestPath(input):
     maxlen = 0
     pathlen = {0: 0}
     for line in input.splitlines():
-        print line
+        print(line)
         name = line.lstrip('\t')
         depth = len(line) - len(name)
         if '.' in name:

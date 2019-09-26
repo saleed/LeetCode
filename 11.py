@@ -1,3 +1,4 @@
+#从序列头到序列尾，
 def maxArea(height):
     """
     :type height: List[int]

@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: int
         """
         if len(s)==0:
-            return 0
+            return -1
         dict={}
         for i in range(len(s)):
             if s[i] in dict.keys():

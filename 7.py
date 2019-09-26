@@ -1,3 +1,4 @@
+#整数反转，逐位从末尾开始取数字，取变量存当前位之前已经反转的结果，然后直到数字取完
 class Solution(object):
     def reverse(self, x):
         """
