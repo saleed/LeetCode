@@ -1,3 +1,5 @@
+#注意和最长公共字串进行区分
+
 class Solution(object):
     def isSubsequence(self, s, t):
         """
