@@ -1,4 +1,10 @@
-#注意和最长公共字串进行区分
+#注意和最长公共字串LCS进行区分
+
+
+#最长公共字串不要求一个字串中的所有字符在另外一个字符串中全部出现，LCS 找的是字符串中字母的公共部分
+
+
+
 
 class Solution(object):
     def isSubsequence(self, s, t):
