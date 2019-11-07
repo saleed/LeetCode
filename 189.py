@@ -6,7 +6,7 @@ class Solution(object):
         :rtype: void Do not return anything, modify nums in-place instead.
         """
         nums[:]=nums[k+1:]+nums[:k+1] #careful for this
-        print nums
+        # print(nums)
 
 
 
