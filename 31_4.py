@@ -16,3 +16,6 @@ class Solution(object):
                         nums[i],nums[j-1]=nums[j-1],nums[i]
                         break
                 break
+
+
+    #上面这个解法不对，只找到了替换的数字没有找到

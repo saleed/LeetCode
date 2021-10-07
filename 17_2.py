@@ -22,9 +22,10 @@ class Solution(object):
 
 
 
-
+    ###自底部向上
 
     #不同方式的递归
+    ##从底部向上收束
     def dfs(self,digits,dict):
         if len(digits)==1:
             return list(dict[int(digits[0])])
@@ -37,6 +38,8 @@ class Solution(object):
                 res.append(tmp)
         return res
 
+
+    ##从顶部向下收束
     def dfs2(self,digits,cur,res,dict):
         if len(digits)==0:
             res.append(cur[:])
