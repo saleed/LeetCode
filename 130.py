@@ -4,6 +4,8 @@ class Solution(object):
         :type board: List[List[str]]
         :rtype: None Do not return anything, modify board in-place instead.
         """
+
+        ###从四个边的点开始深度搜索，并把能搜到的O全部改写为Y
         if len(board)==0 or len(board[0])==0:
             return
 

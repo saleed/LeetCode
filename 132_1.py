@@ -1,15 +1,19 @@
 class Solution(object):
-    def partition(self, s):
+    def minCut(self, s):
         """
         :type s: str
-        :rtype: List[List[str]]
+        :rtype: int
         """
 
         huiwen=self.isHuiWen(s)
+        #
+        # res=[float("inf")]
+        # self.dfs(res,0,0,s,huiwen)
+        # return res[0]-1
 
-        res=[float("inf")]
-        self.dfs(res,0,0,s,huiwen)
-        return res[0]-1
+        ret=self.dpSolve(s,huiwen)
+        return ret
+
 
     def isHuiWen(self,s):
         huiwen=[[False for _ in range(len(s))] for _ in range(len(s))]
@@ -17,10 +21,7 @@ class Solution(object):
         for i in range(len(s)):
             for j in range(len(s)):
                 if i+j<len(s) and i-j>=0 and s[i+j]==s[i-j]:
-
                     huiwen[i-j][i+j]=True
-
-
                 else:
                     break
 
@@ -32,7 +33,7 @@ class Solution(object):
 
         return huiwen
 
-
+####time limit
     def dfs(self,res,tmp,i,s,huiwen):
         # print(tmp,i)
         if i>=len(s):
@@ -42,12 +43,24 @@ class Solution(object):
             if huiwen[i][p]:
                 self.dfs(res,tmp+1,p+1,s,huiwen)
 
+####
+    def dpSolve(self,s,huiwen):
+        dp=[float("inf")]*len(s)
+        for i in range(len(s)):
+            for j in range(i+1):
+                if huiwen[j][i]:
+                    if j-1>=0:
+                        dp[i]=min(dp[i],dp[j-1]+1)
+                    else:
+                        dp[i]=min(dp[i],0)
+        return dp[-1]
+
 
 
 
 a=Solution()
-test="abba"
+test="abbaab"
 for v in a.isHuiWen(test):
     print(v)
 
-print(a.partition(test))
+print(a.minCut(test))
