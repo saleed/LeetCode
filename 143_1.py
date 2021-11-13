@@ -10,33 +10,52 @@ class Solution(object):
         :rtype: None Do not return anything, modify head in-place instead.
         """
 
-        if head==None:
-            return
-        l=0
-        p=head
-        while p!=None:
-            l+=1
-            head=head.next
+        l = 0
+        p = head
+        while p != None:
+            l += 1
+            p = p.next
 
-        cnt=1
-        p=head
-        while cnt<l/2:
-            p=p.next
-            cnt+=1
-        q=None
+        p = head
+        cnt = 0
+        while cnt < l / 2:
+            cnt += 1
+            p = p.next
+        q = p.next
+        p.next = None
 
-        if p!=None:
-            q=p.next
-        r=None
-        if q!=None:
-            r=q.next
-        while q!=None:
-            q.next=p
-            p=q
-            q=r
-            if r!=None:
-                r=r.next
-        tail=p
+        p = q
+        q = None
+        if p != None:
+            q = p.next
+            p.next = None  ###improtant####################notic
+        r = None
+        if q != None:
+            r = q.next
+
+        while q != None:
+            q.next = p
+            p = q
+            q = r
+            if r != None:
+                r = r.next
+
+        # print(p)
+        q = p
+        p = head
+
+        while p != None and q != None:
+            np = p.next
+            nq = q.next
+            p.next = q
+            q.next = np
+            p = np
+            q = nq
+
+        return head
+
+
+
 
 
 

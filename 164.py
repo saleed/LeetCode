@@ -17,6 +17,9 @@ class Solution(object):
         return max
 
 
+
+    ##基数排序 先按数的
+
     ###how to right a radix sort with python
     def radixSort(self, A):
         for k in xrange(10):
