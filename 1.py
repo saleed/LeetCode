@@ -10,7 +10,6 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-
         pair=[]
         for i in range(len(nums)):
             pair.append([i,nums[i]])

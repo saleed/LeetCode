@@ -8,17 +8,10 @@ class Solution(object):
         res="0"
         for i in range(len(num1))[::-1]:
             tmp=self.bitMultiply(num2,num1[i])
-            # print(res,tmp)
+            print(res,tmp)
             res=self.bitAdd(tmp+'0'*(len(num1)-1-i),res)
 
-
-        while  i < len(res):
-            if res[i]=='0':
-                i+=1
-            else:
-                break
-        return "0" if i==len(res) else res[i:]
-
+        return res
 
 
     def bitMultiply(self,mstr,bit):
@@ -51,3 +44,5 @@ class Solution(object):
             res=str(c)+res
         # print(str1,str2,res)
         return res
+a=Solution()
+print(a.multiply("123","456"))
