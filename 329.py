@@ -5,7 +5,8 @@ class Solution(object):
                   for j, val in enumerate(row)}
         length = {}
         print(sorted(matrix, key=matrix.get))
-        print(matrix.get(0))
+        # print(matrix.get())
+        for
 
         for z in sorted(matrix, key=matrix.get):
             length[z] = 1 + max([length[Z]
@@ -25,3 +26,6 @@ nums = [
 ]
 a=Solution()
 a.longestIncreasingPath(nums)
+
+
+

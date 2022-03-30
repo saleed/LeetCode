@@ -13,8 +13,6 @@ class Solution(object):
                 return nums[i]
 
 
-
-
 a=Solution()
 
 t=[1,3,4,2,2]

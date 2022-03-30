@@ -9,7 +9,7 @@ class Solution(object):
             res.append(str(i))
         # print res
         res.sort(cmp=lambda x, y: cmp(y+x, x+y))  #the key sentence
-        # print res
+        print res
         rlt=""
         for i in res:
             if rlt=='0' and i=='0':
