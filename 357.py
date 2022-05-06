@@ -9,7 +9,7 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        if n>=10:
+        if n>=10: ###错误的结论
             return 9*math.factorial(9)
         res=[0]*10
         res[0]=1
