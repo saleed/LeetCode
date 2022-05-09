@@ -5,24 +5,45 @@ class Solution(object):
         :type s2: str
         :rtype: bool
         """
-        ch_dict=set(s1)
-        window_set=set(s2[:len(s1)])
-        if ch_dict==window_set:
-            return True
-        for i in range(len(s1),len(s2)):
-            window_set.remove(s2[i-len(s1)])
-            window_set.add(s2[i])
-            if  ch_dict==window_set:
+        s1=sorted(s1)
+        # perm=self.permutation(s1)
+        for i in range(len(s2)):
+            if i+len(s1)<=len(s2) and sorted(s2[i:i+len(s1)])==s1:
                 return True
         return False
 
 
 
-if __name__=="__main__":
-    s1 = "adc"
-    s2 = "dcda"
-    a=Solution()
-    print(a.checkInclusion(s1,s2))
+    def permutation(self,s):
+        res=[]
+        vis=set()
+        for i in range(len(s)):
+            if s[i] in vis:
+                continue
+            vis.add(s[i])
+            news=s[:i]+s[i+1:]
+            newres=self.permutation(news)
+            if len(newres)>0:
+                for v in newres:
+                    tmp=s[i]+v
+                    res.append(tmp)
+            else:
+                res.append(s[i])
+        return res
+
+
+
+s="dinitrophenylhydrazine"
+ss=Solution()
+print(ss.permutation(s))
+
+
+
+
+
+
+
+
 
 
 
