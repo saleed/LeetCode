@@ -8,7 +8,9 @@ class Solution(object):
 
         cdict={}
         for v in paths:
+
             spv=v.split(" ")
+            print(spv)
             dir=v[0]
             for fn in spv[1:]:
                 mid=fn.split("(")
@@ -16,8 +18,12 @@ class Solution(object):
                 filename=mid[0]
                 if content in cdict:
                     cdict[content].append(os.path.join(dir,filename))
-                else
+                else:
+                    cdict[content]=[os.path.join(dir, filename)]
 
 
-                if cdict[]
-                cdict[mid:-1]
+        res=[]
+        for k in cdict:
+            res.append(cdict[k])
+        return res
+

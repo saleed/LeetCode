@@ -9,8 +9,6 @@ class Solution(object):
 
 
         res=[]
-        if len(digits)==0:
-            return res
         self.dfs(d2sMap,res,"",digits,0)
         return res
 
@@ -19,5 +17,7 @@ class Solution(object):
         if i==len(digits):
             res.append(tmp)
             return
+        if digits[i] not in vdict:
+            return 
         for l in vdict[digits[i]]:
             self.dfs(vdict,res,tmp+l,digits,i+1)
