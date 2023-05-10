@@ -1,7 +1,3 @@
-## coding:UTF-8
-
-
-#找到target后，继续二分查找
 class Solution(object):
     def searchRange(self, nums, target):
         """
@@ -9,4 +5,37 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        return self.binary(nums,target)
+        if len(nums) == 0:
+            return [-1, -1]
+        p = 0
+        q = len(nums) - 1
+        while p <= q:
+            mid = (p + q) / 2
+            if nums[mid] == target:
+                q = mid - 1
+            elif nums[mid] < target:
+                p = mid + 1
+            else:
+                q = mid - 1
+        left = -1
+        if q + 1 < len(nums) and nums[q + 1] == target:
+            left = q + 1
+
+        p = 0
+        q = len(nums) - 1
+        while p <= q:
+            mid = (p + q) / 2
+            if nums[mid] == target:
+                p = mid + 1
+            elif nums[mid] < target:
+                p = mid + 1
+            else:
+                q = mid - 1
+        right = -1
+        if p - 1 >= 0 and nums[p - 1] == target:
+            right = p - 1
+
+        return [left, right]
+
+
+

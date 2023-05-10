@@ -17,7 +17,7 @@ class Solution(object):
         if i==len(board):
             tmp=[]
             for v in board:
-                tmp.append("".join(v))
+                tmp.append("".join(v))  ##！！！！！不能直接append(board[:] 结果是空的
             res.append(tmp)
             return
         for j in range(len(board[0])):

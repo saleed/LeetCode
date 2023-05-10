@@ -15,7 +15,10 @@ class Solution(object):
             return
         self.recursive(nums, i + 1, res)
         for v in range(i + 1, len(nums)):
-            if nums[v] == nums[i]:
+            # if nums[v] == nums[i]: ###这种写法是错误的  要判断num[i]是否都访问过
+            #     continue
+
+            if nums[j] in nums[i:j]:
                 continue
             nums[v], nums[i] = nums[i], nums[v]
             self.recursive(nums, i + 1, res)
@@ -30,8 +33,6 @@ class Solution(object):
             p = len(nums) - 1
             while p > 0 and nums[p] <= nums[p - 1]: ## < change to <=
                 p -= 1
-
-
 
             if p == 0:
                 break
@@ -51,7 +52,21 @@ class Solution(object):
             print("2",nums)
         return res
 
+#
+# test = [1,1,2]
+# a=Solution()
+# print(a.permuteUnique(test))
 
-test = [1,1,2]
-a=Solution()
-print(a.permuteUnique(test))
+test=[1,11,1,111,2]
+print(test[1:1])
+
+
+test=[[1,2,3,4],[5,6,7,8]]
+print(test[1:2][2:])
+
+
+d={}
+for i in range(5):
+    d[i]=[i]
+print(d.values())
+print(list("234"))
