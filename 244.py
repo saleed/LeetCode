@@ -47,6 +47,10 @@ class WordDistance(object):
         return mindist
 
 
+    def shortest2(self,word1,word2):
+
+
+
 
 # Your WordDistance object will be instantiated and called as such:
 # obj = WordDistance(wordsDict)

@@ -5,9 +5,6 @@ class Solution(object):
         :rtype: bool
         """
 
-
-
-
         dp=[[ 0 for _ in range(len(nums))] for _ in range(len(nums))]
         sumn=[[0 for _  in range(len(nums))] for _ in range(len(nums))]
         for l in range(len(nums)):
@@ -16,8 +13,6 @@ class Solution(object):
                     sumn[j][j+l]=nums[j]
                 elif j+l<len(nums):
                     sumn[j][j+l]=nums[j+l]+sumn[j][j+l-1]
-
-
 
         for l in range(len(nums)):
             for j in range(len(nums)):
