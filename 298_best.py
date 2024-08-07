@@ -15,7 +15,7 @@ class Solution(object):
         return res[0]
 
 
-
+## 自顶向下记录结果
     def dfs(self,root,res,parent,tmplen):
         if root==None:
             print(parent.val)

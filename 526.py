@@ -9,9 +9,6 @@ class Solution(object):
         self.dfs(n,n,set(),res)
         return res[0]
 
-
-
-
     def dfs(self,n,i,vis,res):
         if i==0:
             res[0]+=1

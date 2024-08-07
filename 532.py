@@ -23,7 +23,6 @@ class Solution(object):
             return cnt
 
 
-
         p=0
         q=1
         while q<len(nums):

@@ -1,5 +1,4 @@
 #low level comprehesion
-
 class Solution(object):
     def removeDuplicateLetters(self, s):
         """
@@ -23,6 +22,8 @@ class Solution(object):
                 break
         news=s[pos+1:].replace(s[pos],"")
         return s[pos]+self.removeDuplicateLetters(news)
+
+
 input="bcabc"
 a=Solution()
 print a.removeDuplicateLetters(input)

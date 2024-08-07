@@ -23,8 +23,6 @@ class Solution(object):
         return False
 
     #dp
-
-
     #0-1背包问题？？？
     #dp[i][j]表示前i个数之和为j
     def dp(self,nums,target):

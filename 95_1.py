@@ -10,32 +10,8 @@ class Solution(object):
         :type n: int
         :rtype: List[TreeNode]
         """
-
-        node=[i for i in range(1,n+1)]
-
-        res=self.dfs(node)
-        return res
-
-
-
-    def dfs(self,nodes):
-        if len(nodes)==0:
-            return [None]
-
-        res=[]
-        for i in range(len(nodes)):
-            lTrees=self.dfs(nodes[:i])
-            rTrees=self.dfs(nodes[i+1:])
-            for l in lTrees:
-                for r in rTrees:
-                    root=TreeNode(nodes[i])
-                    root.left=l
-                    root.right=r
-                    res.append(root)
-        return res
-
-
-
-
-
-
+        dp=[0]*n
+        dp[0]=1
+        for i in range(n):
+            for j in range(i+1):
+                dp

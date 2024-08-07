@@ -11,7 +11,6 @@ class Solution(object):
         :rtype: None Do not return anything, modify root in-place instead.
         """
 
-
         p=root
         st=[]
         res=[]

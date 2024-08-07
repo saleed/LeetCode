@@ -22,7 +22,6 @@ class Solution(object):
 
 
     def processExp(self,expression):
-
         expression=expression+"+"
         i=0
         res=[]

@@ -8,6 +8,9 @@ class Solution(object):
 
         #####连续子数组！！！！！
 
+
+        ###
+
         presum=[0]*len(nums)
         vdict={0:-1} ##### notice this
         prev=0

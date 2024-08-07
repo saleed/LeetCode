@@ -5,7 +5,6 @@ class Solution(object):
         :rtype: int
         """
 
-
         timePoints.sort()
         diff=float("inf")
         for i in range(1,len(timePoints)):

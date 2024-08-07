@@ -5,16 +5,15 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-
-        prefixsum={}
-
+        presum={}
         maxl=0
+        sumv=0
         for i in range(len(nums)):
-            sumval=prefixsum[i-1]+nums[i] if i>0 else nums[i]
-            if sumval not in prefixsum:
-                prefixsum[sumval]=i
-            if sumval==k:
+            sumv+=nums[i]
+            if sumv==k:
                 maxl=max(maxl,i+1)
-            if sumval-k in prefixsum:
-                maxl=max(maxl,i-prefixsum[sumval-k])
+            elif sumv-k in presum:
+                maxl=max(maxl,i-presum[sumv-k])
+            if sumv not in presum:
+                presum[sumv]=i
         return maxl

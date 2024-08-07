@@ -8,7 +8,7 @@ class Solution(object):
         for i in nums:
             res.append(str(i))
         # print res
-        res.sort(cmp=lambda x, y: cmp(y+x, x+y))  #the key sentence
+        res.sort(key=lambda x,y: cmp_to_key(y+x, x+y))  #the key sentence
         print res
         rlt=""
         for i in res:

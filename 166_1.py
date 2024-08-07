@@ -33,7 +33,10 @@ class Solution(object):
             res="-"+res
         return res
 
-a=7
-b=-12
-c=Solution()
-print(c.fractionToDecimal(a,b))
+
+numerator =-1
+denominator =-2147483648
+a=Solution()
+print(a.fractionToDecimal(numerator,denominator))
+
+# print(1/2147483648)

@@ -12,9 +12,14 @@ class Solution(object):
                 sdict[v]+=1
             else:
                 sdict[v]=1
-
-        dsort=sorted(sdict.items(),key=lambda x:x[1],reverse=True)
+        print(sdict.items())
+        dsort=sorted(sdict.items(),key=lambda x:x[1],reverse=True) ###学会使用items
+        print(dsort)
         res=""
         for k in dsort:
-            res+=k*dsort[k]
+            res+=k[0]*k[1]
         return res
+
+a=Solution()
+s = "tree"
+print(a.frequencySort(s))

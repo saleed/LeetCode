@@ -23,8 +23,6 @@ class Solution(object):
         return self.Solve(root)
 
 
-
-
 #以下是第二种递归的写法
     def dfs(self,root,acc):
         if root==None:
@@ -36,8 +34,6 @@ class Solution(object):
         if root.right==None:
             return self.dfs(root.left,root.val+acc*10)
         return self.dfs(root.left,root.val+acc*10)+self.dfs(root.right,root.val+acc*10)
-
-
 
 
     def topToBottom(self,root,res,cur):

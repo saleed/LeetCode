@@ -1,4 +1,37 @@
-打家劫舍一是一个直线上有各个房子，而本题是一个环上有各个房子。
-直线与环的区别在于直线上首尾两个房子都可以被抢劫没有任何的关联，而在环上时，首尾两个房子是相邻的，
-有着制约的关系，即首尾最多只有一个房子可以被选中。所以在最大的金额是 包含头不包含尾，
-包含尾不包含头两种方式中的最大值。
+class WordDistance(object):
+
+    def __init__(self, wordsDict):
+        """
+        :type wordsDict: List[str]
+        """
+        self.dict=wordsDict
+        self.shortestdict={}
+
+
+    def shortest(self, word1, word2):
+        """
+        :type word1: str
+        :type word2: str
+        :rtype: int
+        """
+        if (word1,word2) in self.shortestdict:
+            return self.shortestdict[(word1,word2)]
+        else:
+            pos1=float("inf")
+            pos2=-float("inf")
+            mind=float("inf")
+            for i in range(len(self.dict)):
+                if self.dict[i]==word1:
+                    pos1=i
+                if self.dict[i]==word2:
+                    pos2=i
+                mind=min(mind,abs(pos1-pos2))
+            self.shortestdict[(word1,word2)]=mind
+            self.shortestdict[(word2,word1)]=mind
+        return mind
+
+
+
+# Your WordDistance object will be instantiated and called as such:
+# obj = WordDistance(wordsDict)
+# param_1 = obj.shortest(word1,word2)

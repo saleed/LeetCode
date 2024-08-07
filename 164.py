@@ -22,7 +22,7 @@ class Solution(object):
 
     ###how to right a radix sort with python
     def radixSort(self, A):
-        for k in xrange(10):
+          for k in xrange(10):
             s = [[] for i in xrange(10)]
             for i in A:
                 s[i / (10 ** k) % 10].append(i)

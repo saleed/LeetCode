@@ -41,3 +41,5 @@ test=["2", "1", "+", "3", "*"]
 print(a.evalRPN(test))
 
 print(int("-2323"))
+
+print("-11".isdigit())  ###只能判断正数

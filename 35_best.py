@@ -1,38 +1,30 @@
 class Solution(object):
-    def isValidSudoku(self, board):
+    def searchInsert(self, nums, target):
         """
-        :type board: List[List[str]]
-        :rtype: bool
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
         """
+        return self.search1(nums,target)
 
-        for i in range(len(board)):
-            rowset = set()
-            for j in range(len(board[i])):
-                if board[i][j] == ".":
-                    continue
-                if board[i][j] in rowset:
-                    return False
-                else:
-                    rowset.add(board[i][j])
-        for j in range(len(board[0])):
-            colset=set()
-            for i in range(len(board)):
-                if board[i][j] == ".":
-                    continue
-                if board[i][j] in colset:
-                    return False
-                else:
-                    colset.add(board[i][j])
-        for i in range(9):
-            px,py=(i/3)*3,i%3*3
-            gridset=set()
-            for p in range(3):
-                for q in range(3):
-                    if  board[px+p][py+q] ==".":
-                        continue
-                    if board[px+p][py+q] in gridset:
-                        return False
-                    else:
-                        gridset.add(board[px+p][py+q])
+    #二分查找t
+    def search1(self,nums,target):
+        p=0
+        q=len(nums)-1
+        while p<q:
+            mid=(p+q)/2
+            print(mid)
+            if nums[mid]==target:
+                return mid
+            elif nums[mid]<target:
+                p=mid+1
+            else:
+                q=mid
+        if nums[p]<target:
+            return p+1
+        elif nums[p]>=target:
+            return p
 
-        return True
+
+
+

@@ -50,13 +50,9 @@ class Solution(object):
 
 
 
-
 ss=Solution()
 
 nums = [0,0,0,0,0,0,0,0,1]
 
 target = 1
 print(ss.findTargetSumWays(nums,target))
-
-
-

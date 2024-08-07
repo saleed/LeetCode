@@ -15,21 +15,24 @@ class Solution(object):
         :rtype: Node
         """
         self.recursive(root)
-
-
+        return root
 
     def recursive(self,root):
         if root==None:
             return
-        nextrnode=None
+        lr=None
+        rl=None
         if root.left!=None:
             root.left.next=root.right
+            lr=root.left
         if root.right!=None:
-            nextrnode=root.right
-        nextlnode=None
+            lr=root.right
         if root.next!=None:
-            nextlnode=root.next.left if root.next.left!=None else root.next.right
-        if nextrnode!=None:
-            nextrnode.next=nextlnode
+            if root.next.left!=None:
+                rl=root.next.left
+            elif root.next.right!=None:
+                rl=root.next.right
+        if lr is not None:
+            lr.next=rl
         self.recursive(root.left)
         self.recursive(root.right)

@@ -14,9 +14,6 @@ class Solution(object):
         return self.iterative2(root)
 
 
-
-
-
     #访问一个根节点，先后保存右左节点，然后迭代访问栈顶
     def iterative1(self, root):
         if root == None:

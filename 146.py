@@ -1,6 +1,8 @@
 class LRUCache(object):
 ######################
 ##exceed time limit
+#####链表的操作
+
     def __init__(self, capacity):
         """
         :type capacity: int

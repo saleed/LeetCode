@@ -8,7 +8,7 @@ class Solution(object):
         sel=[]
         for i in range(1,n+1):
             sel.append(i)
-        k=k-1
+        k=k-1 ####为什么从0开始算起就
         res=""
         while len(sel)>0:
             num=self.fac(len(sel)-1)

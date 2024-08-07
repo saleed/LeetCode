@@ -4,26 +4,24 @@ class Solution(object):
         :type strings: List[str]
         :rtype: List[List[str]]
         """
-        hashdict={}
+        hashdict = {}
         for v in strings:
-            k=self.getKey(v)
-            if k in hashdict:
-                hashdict[k].append(v)
+            tk = self.convert(v)
+            if tk in hashdict:
+                hashdict[tk].append(v)
             else:
-                hashdict[k]=[v]
+                hashdict[tk] = [v]
 
+        return hashdict.values()
 
-        res=[]
-        for k in hashdict:
-            res.append(hashdict[k])
+    def convert(self, s):
+        res = ""
+        diff = ord(s[0]) - ord('a')
+        for v in s:
+            res += chr((ord(v) - diff - ord('a') + 26) % 26)
+        print(res)
         return res
 
-
-
-
-    def getKey(self,str):
-        intcode=""
-        diff=ord(str[0])-ord('a')
-        for v in str:
-            intcode+=str(((ord(v)-diff-ord('a'))+26)%26)
-        return intcode
+test="dfaggagag"
+a=Solution()
+print(a.convert(test))
