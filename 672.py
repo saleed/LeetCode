@@ -18,6 +18,8 @@ class Solution(object):
         print(sset)
 
 
+
+
         for v in sset:
             tmp = [0] * min(6,n)  ###优化点1，灯泡亮灭周期为6
             # print(v)

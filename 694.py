@@ -4,7 +4,6 @@ class Solution(object):
         :type grid: List[List[int]]
         :rtype: int
         """
-
         landlist=[]
         vis=[]
         cnt=0
@@ -40,7 +39,7 @@ class Solution(object):
         if len(l1)!=len(l2):
             return False
         for i in range(1,len(l1)):
-            if not( l1[i][0]-l1[0][0]==l2[i][0]-l2[0][0] and l1[i][1]-l1[0][1]==l2[i][1]-l2[0][1]):
+            if not(l1[i][0]-l1[0][0]==l2[i][0]-l2[0][0] and l1[i][1]-l1[0][1]==l2[i][1]-l2[0][1]):
                 return False
         return True
 
