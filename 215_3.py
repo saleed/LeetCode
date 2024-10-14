@@ -32,8 +32,6 @@ class Solution(object):
                 nums[i],nums[j]=nums[j],nums[i]
                 j+=1
 
-
-
         nums[j-1],nums[0]=nums[0],nums[j-1]
         print(j, nums)
         return j

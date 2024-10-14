@@ -6,6 +6,8 @@ class Solution(object):
         :rtype: bool
         """
 
+###脑子里应该想着阴影范围，任何一个位置，右下角区域比当前位置大，左上角比当前位置小，其余位置无法判断
+###
         row=-1
         while row+1<len(matrix) and target>matrix[row+1][0]:
             row+=1

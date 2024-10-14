@@ -5,6 +5,8 @@
 #         self.left = None
 #         self.right = None
 
+
+###多余搜索
 class Solution(object):
     def lowestCommonAncestor(self, root, p, q):
         """

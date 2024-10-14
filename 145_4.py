@@ -28,7 +28,7 @@ class Solution(object):
                 p=p.left
 
             p=st.pop()
-            if p.right==None or prev==p:
+            if p.right==None or prev==p: ##
                 res.append(p.val)
                 prev=p
                 p=None

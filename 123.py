@@ -5,7 +5,6 @@ class Solution(object):
         :rtype: int
         """
 
-
         dp=[[[ i for i in range(2)] for _ in range(k)] for _ in range(len(prices))]
 
         dp[i][k][0]=max(dp[i-1][k][0],dp[i-1][k-1][1]+prices[i])

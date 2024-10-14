@@ -26,7 +26,8 @@ class Solution(object):
             return 0,0,0
         lmax,ll,lr=self.dfs(root.left)
         rmax,rl,rr=self.dfs(root.right)
-        return max(lmax,rmax,root.val,ll+root.val,lr+root.val,rl+root.val,rr+root.val,ll+rr+root.val),max(root.val,root.val+ll,root.val+lr),max(root.val,root.val+rl,root.val+rr)
+        return max(lmax,rmax,root.val,ll+root.val,lr+root.val,rl+root.val,rr+
+                   root.val,ll+rr+root.val),max(root.val,root.val+ll,root.val+lr),max(root.val,root.val+rl,root.val+rr)
 
 
 a=Solution()

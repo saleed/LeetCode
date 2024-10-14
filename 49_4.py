@@ -23,7 +23,7 @@ class Solution(object):
     def getHashKey(self, s):
         k = [0] * 26
         for i in range(len(s)):
-            k[ord(s[i]) - ord('a')] += 1
+            k[ord(s[i]) - ord('a')] += 1  ####注意这里不能使用移位的方式使用 移位的k无法统计个数
 
-        return tuple(k)
+        return tuple(k)  ##只有tuple才能当做haskkey
 

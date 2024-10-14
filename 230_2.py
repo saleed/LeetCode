@@ -5,6 +5,9 @@
 #         self.left = None
 #         self.right = None
 
+
+##不是最优解法，计算节点数量可以和dfs的过程合二为一
+
 class Solution(object):
     def kthSmallest(self, root, k):
         """

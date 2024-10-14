@@ -17,7 +17,7 @@ class Solution(object):
                 tmp=nums[nums[tmpi]-1]
                 nums[nums[tmpi]-1]=nums[tmpi]
                 nums[tmpi]=tmp
-                if nums[tmpi]==pre:
+                if nums[tmpi]==pre:  ## 这里是考虑数组中有重复数字的情况
                     break
                 pre=nums[tmpi]
 

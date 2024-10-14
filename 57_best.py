@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: List[List[int]]
         """
 
-        intervals.sort(key=rightbound)
+        intervals.sort(key=leftbound)
 
         res=[]
         for v in intervals:
@@ -23,5 +23,5 @@ class Solution(object):
 
 
 
-def rightbound(x):
+def leftbound(x):
     return x[0]

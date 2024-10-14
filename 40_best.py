@@ -5,19 +5,15 @@ class Solution(object):
         :type target: int
         :rtype: List[List[int]]
         """
-
         hashset=dict()
         for v in candidates:
             if v in hashset:
                 hashset[v]+=1
             else:
                 hashset[v]=1
-
         res=[]
         self.dfs(target,hashset,res,[],0)
         return res
-
-
 
     def dfs(self,target,hashset,res,tmpsel,tmpsum):
         # print(len(tmpsel),tmpsel,hashset)

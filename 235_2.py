@@ -7,8 +7,6 @@
 
 
 
-
-
 #题意理解错误
 class Solution(object):
     def lowestCommonAncestor(self, root, p, q):

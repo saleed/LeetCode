@@ -5,9 +5,7 @@ class Solution(object):
         :type heights: List[int]
         :rtype: int
         """
-
         ##思路是枚举高度，并维护一个单调栈
-
         st=[]
         p=0
         lbound=[0]*len(heights)
@@ -22,7 +20,6 @@ class Solution(object):
             lbound[p] = heights[p] * (p-st[-1]) if len(st)>0 else heights[p]*(p+1)
             st.append(p)
             p+=1
-
 
 
         q=len(heights)-1

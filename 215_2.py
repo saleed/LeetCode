@@ -1,3 +1,10 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Time    : 2024/10/14 14:06
+# @Author  : sunaolin
+# @File    : 215_5.py
+
+
 class Solution(object):
     def findKthLargest(self, nums, k):
         """
@@ -6,27 +13,39 @@ class Solution(object):
         :rtype: int
         """
 
-        part=self.partition(nums)
-        if part==len(nums)-k:
-            return nums[part]
-        elif part>len(nums)-k:
-            self.findKthLargest(nums[:part],k)
+        self.quickSort(nums,0,len(nums)-1)
+        print(nums)
+        return nums[-k]
+
+####基数排序必须保证所有的数字都大于0
+    def radixSort(self,nums):
+        sdict={}
+
+        for i in range(10):
+            base=pow(10,i)
+            for v in nums:
+                left=(nums/base)%10
+                if left in sdict:
+                    sdict[left].append(v)
+                else:
+                    sdict[left]=[v]
+            nums=[b for a in sdict.values() for b in a]
+        return nums
+
+    def quickSort(self,nums,s,e):
+        if s>=e:
+            return
         else:
-            self.findKthLargest(nums[part+1:],k-part-1)
+            p=s+1
+            for i in range(s+1,e+1):###注意这里的边界
+                if nums[i]<nums[s]:
+                    nums[i],nums[p]=nums[p],nums[i]
+                    p+=1
+            nums[p-1],nums[s]=nums[s],nums[p-1]
+            # print(s,p,e,nums)
+            self.quickSort(nums,s,p-2) #注意这里是p
+            self.quickSort(nums,p,e)
 
 
 
 
-    def partition(self,nums):
-        if len(nums)==0:
-            return -1
-        if len(nums)==1:
-            return 0
-        p=0
-        for i in range(len(nums)):
-           if nums[i]<nums[-1]:
-               nums[p],nums[i]=nums[i],nums[p]
-               p+=1
-
-        nums[p],nums[-1]=nums[-1],nums[p]
-        return p

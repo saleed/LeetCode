@@ -13,7 +13,7 @@ class Solution(object):
             mid=(p+q)/2
             if nums[mid]==target:
                 return True
-            if nums[p]==nums[mid]:
+            if nums[p]==nums[mid]:#####主要就在于这里，如果遇到mid和p相同，怎么继续更新边界
                 p+=1
             elif nums[p]<nums[mid]:
                 if nums[p]<=target<nums[mid]:

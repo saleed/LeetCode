@@ -19,7 +19,8 @@ class Solution(object):
             if nums[i]==0:
                 nums[i],nums[p]=nums[p],nums[i]
                 p+=1
-                if i+1==p:
+                if i+1==p:###多余了，只需要i+=1就行了
+
                     i+=1
             elif nums[i]==2:
                 nums[i],nums[q]=nums[q],nums[i]

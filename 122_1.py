@@ -7,7 +7,7 @@ class Solution(object):
         return self.dp(prices)
 
 
-
+    ###T+0  
     def greedy(self,prices):
         maxbenefit=0
         for i in range(1,len(prices)):

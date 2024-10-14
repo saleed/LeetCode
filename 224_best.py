@@ -11,9 +11,6 @@ class Solution(object):
         return self.dfs(s)
 
 
-
-
-
     def dfs(self,s):
         res=0
         flag=1

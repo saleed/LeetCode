@@ -19,9 +19,6 @@ class Solution(object):
 
 
 
-
-
-
     ###多路归并，超时
     def mulitiCombine(self,lists):
         if len(lists)==0:

@@ -1,6 +1,10 @@
 import Queue
 class MyStack(object):
 
+
+    ####两个队列实现一个栈，从队列取数据一直取到最后一个，每次在两个队列之间交替取数据取到最后一个
+    ###两个栈实现一个队列，每次取数据交换两个栈的数据
+
     def __init__(self):
         """
         Initialize your data structure here.

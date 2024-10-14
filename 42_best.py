@@ -15,6 +15,6 @@ class Solution(object):
                 if len(que)==0:
                     break
                 minh=min(height[que[-1]],height[i])
-                res+=(minh-height[tmp])*width
+                res+=(minh-height[tmp])*width ## 被弹出的柱子的上方积累的长条雨水
             que.append(i)
         return res

@@ -21,6 +21,7 @@ class Solution(object):
             nums[i],nums[v]=nums[v],nums[i]
 
 
+    ##逐个找下一个大的
     def nonRecursive(self,nums):
         res=[]
         nums.sort()

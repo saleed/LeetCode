@@ -14,7 +14,7 @@ class Solution(object):
         """
         res=1
         for v in nums:
-            if v-1 not in nums:
+            if v-1 not in nums: ##非常巧妙，避免重复搜索
                 y=v
                 while y in nums:
                     y+=1

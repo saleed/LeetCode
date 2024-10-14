@@ -18,6 +18,11 @@ class Solution(object):
         :rtype: List[int]
         """
 
+
+        ###核心在于p mid q的更新方式
+        ##本题要求p 和q必须可以更新到mid上，
+        ##当mid=(p+q)/2时，p无法更新到mid，因为可能导致q=p+1时候 mid=p，在while p<q死循环
+        ##这里一个小技巧，mid=(p+q+1)/2 可以当p永远不会和mid相等
         p=0
         q=len(nums)-1
         while p<q:

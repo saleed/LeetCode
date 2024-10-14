@@ -11,10 +11,10 @@ class Solution(object):
 
         while q<r:
             if nums[q]==0:
-                nums[q],nums[p]=nums[p],nums[q]
+                nums[q],nums[p]=nums[p],nums[q]  ###换过来的一定是个1
                 p+=1
                 q+=1
-            elif nums[q]==1:
+            elif nums[q]==1: ##遇到1直接跳过
                 q+=1
             else:
                 nums[q], nums[r] = nums[r], nums[q]

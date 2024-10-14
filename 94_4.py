@@ -18,17 +18,16 @@ class Solution(object):
         :rtype: List[int]
         """
 
-
-
         st=[]
         tmp=root
         res=[]
         while tmp!=None or len(st)>0:
             while tmp:
-                st.append(tmp.left)
+                st.append(tmp)
+                tmp=tmp.left
             top= st.pop()
             res.append(top.val)
-            tmp=top.right
+            tmp=top.right  ##注意tmp指针一定不能指回st中的任何指针
 
         return res
 
